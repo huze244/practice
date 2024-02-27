@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name : '坤坤',
+            id : 3,
+            friend :{
+                name : '小丽',
+                id: 1,
+            }
+        }
+        console.log(person.name);
+        let {name,id:newid} = person
+        let {friend:{name:nwename,id}} =person
+        console.log(name,newid,id,nwename );
+        
+    </script>
+</body>
+</html>

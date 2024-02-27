@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bullsort(arr){
+            for(let i = 0;i<= arr.length-1;i++){
+                for(let j = 0;j<=arr.length-i-1;j++){
+                    if(arr[j]>arr[j+1]){
+                        [arr[j+1],arr[j]]=[arr[j],arr[j+1]]
+                    }
+                }
+            }
+            return arr;
+        }
+        var list = [5,7,8,9,1,2,4];
+        console.log(list);
+        console.log(bullsort(list));
+    </script>
+</body>
+</html>

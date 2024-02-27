@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 200px;height: 200px;background-color: aqua;overflow: auto;" class="small">
+        <div style="width: 400px;height: 400px;background-color: red;" class="big">
+
+        </div>
+    </div>
+    <script>
+        let big = document.querySelector('.big')
+        let small = document.querySelector('.small')
+        console.log(parseInt(getComputedStyle(small).height));
+        
+       small.addEventListener('scroll',function(){
+            console.log(small.scrollHeight);
+            console.log(small.scrollTop);
+            console.log(getComputedStyle(small).height);
+            
+            
+            
+       })
+        
+         
+
+    </script>
+</body>
+</html>

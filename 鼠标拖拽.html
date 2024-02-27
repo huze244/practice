@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 200px;height: 200px;background-color: red;position: absolute;"></div>
+    <script>
+        let div = document.querySelector('div')
+        div.onmousedown = function(){           
+            div.onmousemove = function(e){    
+                let X = e.pageX - e.offsetX
+                let Y = e.pageY - e.offsetY
+                div.style.left = X +'px' 
+                div.style.top = Y +'px'
+            }
+            div.onmouseup = function(e){
+                div.onmousemove = null
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function selsort(arr){
+            
+            for(let j=0;j<=arr.length-1;j++){
+            let minIndex = j;
+            for(let i = 1+j;i<=arr.length-1;i++){
+            if(arr[i]<arr[minIndex]){
+                minIndex = i
+            }
+        }
+        [arr[minIndex],arr[j]]=[arr[j],arr[minIndex]] 
+        }
+        return arr;
+    }
+        let arr = [5,7,6,1,5,7,6]
+        console.log(selsort(arr)); 
+    </script>
+</body>
+</html>

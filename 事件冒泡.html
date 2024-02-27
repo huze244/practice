@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sub" style="height: 100px;width: 100px;border: 1px solid black;">
+        <div class="sub" style="height: 20px;width: 20px;border: 1px solid black;" data-name="1">
+
+        </div>
+        <span>123</span>
+        <div class="sub" style="height: 20px;width: 20px;border: 1px solid black;" data-name="2">
+
+        </div>
+    </div>
+    <script>
+        let sub = document.querySelector('.sub')
+        sub.addEventListener('click',function(e){
+            console.log(e.target)
+        })
+    </script>
+</body>
+</html>
