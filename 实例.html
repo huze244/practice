@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(names){
+            this.name = names
+        }
+        let bc = new Car();
+        Object.prototype.money = 1;
+        Car.prototype.lunzi = 4;
+        bc.lunzi = 6
+
+        console.log(Car.prototype);
+        console.log(bc.money);
+        
+
+    </script>
+</body>
+</html>

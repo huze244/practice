@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let span = document.createElement('span')
+            let input = document.createElement('input')
+            document.querySelector('body').appendChild(span)
+            document.querySelector('body').insertBefore(input,span)
+            
+            function creatcode(){
+                let num = ''
+            for(let i=0;i<4;i++){
+                num += Math.floor(Math.random()*10)
+            }
+            span.innerHTML = num;
+            }
+            let judgecode = ()=>{
+                if(input.value.toString() == span.innerHTML){
+                input.style.border = '2px solid green'
+               }else{
+                input.style.border = '2px solid red'
+               }
+            }
+            creatcode();
+            input.addEventListener('blur',function(){
+                judgecode()
+            })
+            span.addEventListener('click',function(){
+                creatcode();
+                judgecode()
+            })
+        
+    </script>
+</body>
+</html>
