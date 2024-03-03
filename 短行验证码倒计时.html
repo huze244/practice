@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送验证码</button>
+    <script>
+        let btn = document.querySelector('button')
+        let timer;
+        let i = 60;
+        btn.onclick = function(){
+        btn.disabled = true;
+        clearInterval(timer)
+        timer = setInterval(() => {
+            i--
+            this.innerHTML = `${i}秒后可重新发送`
+            if(i==0){
+            clearInterval(timer)
+            i=60;
+            btn.disabled = false;
+            this.innerHTML = `重新发送`
+        }
+        }, 100);
+        }
+        
+    </script>
+</body>
+</html>

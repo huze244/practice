@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <span></span>
+    <button>开始</button>
+    <script>
+        let flag = 0;
+        let names = ['李俊','黄汉兴','马凌云'];
+        let timer;
+        let span = document.querySelector('span')
+        let btn = document.querySelector('button')
+        function creatname(names){
+            let name = names[Math.floor(Math.random()*names.length)]
+            return name;
+        }
+        btn.onclick =function(){
+            if(flag == 0 ){
+            timer = setInterval(()=>{
+            span.innerHTML = creatname(names);
+        },200)
+        flag = 1;
+    }else{
+        clearInterval(timer)
+        flag = 0;
+    }
+    }
+    </script>
+</body>
+</html>

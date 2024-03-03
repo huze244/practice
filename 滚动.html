@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 0 auto;
+            overflow: auto;
+        }
+        .div2{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        let body = document.querySelector('body')
+        let div1 = document.createElement('div')
+        body.appendChild(div1)
+        div1.classList.add('div1')
+    </script>
+</body>
+</html>
