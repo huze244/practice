@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>发送验证码</button>
+    <script>
+        document.querySelector('button').addEventListener('click',()=>{
+            let mobile = document.querySelector('input').value;
+            // 需要给指定的手机号发送验证码 自己无法实现 找后端要接口
+            // 自行验证手机号是否正常
+            // 1、获取内置的Ajax对象
+            let xhr = new XMLHttpRequest;
+            // 2、打开连接 传递请求方式与请求地址
+            xhr.open('post','http://shop-api.phpclub.org.cn/home/sms/send');
+            // 3、设置请求头(非必须)
+            xhr.setRequestHeader('Content-Type','application/json');
+            // 4、发送请求 send方法中是否需要传递参数 不确定 与请求方式有关系 
+            // send方法中放的内容一定是字符串
+            xhr.send(JSON.stringify({mobile,scene:1}));
+            // 5、监听状态改变
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    // 整个ajax中不确定的代码就在这个判断中
+                    // 直接实现倒计时效果即可
+                    alert('你的验证码发送成功')
+                    // 看效果走liveserver
+                    // 也可以验证后端给我们的结果是否正常
+                    console.log(xhr.responseText)
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
